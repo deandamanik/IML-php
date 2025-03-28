@@ -1,0 +1,99 @@
+<?php
+session_start();
+include '../db.php';
+
+// Verifikasi ID transaksi
+if (!isset($_GET['id'])) {
+    header("Location: ../akademi.php");
+    exit();
+}
+
+$transaksi_id = (int)$_GET['id'];
+
+// Ambil data transaksi
+$sql = "SELECT r.*, m.nama_modul, m.harga 
+        FROM riwayat_akademi r
+        JOIN modul m ON r.id_modul = m.id
+        WHERE r.id = ? AND r.user_id = ?";
+        
+$stmt = $koneksi->prepare($sql);
+$stmt->bind_param("ii", $transaksi_id, $_SESSION['user_id']);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    die("Transaksi tidak ditemukan!");
+}
+
+$transaksi = $result->fetch_assoc();
+$stmt->close();
+$koneksi->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>Transaksi Berhasil</title>
+    <link rel="stylesheet" href="../src/output.css">
+</head>
+<body class="bg-black text-white">
+
+    <div class="min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 py-12">
+        <div class="w-full max-w-2xl bg-gradient-to-br from-gray-900 to-black rounded-2xl border border-gray-700 shadow-2xl overflow-hidden">
+            
+            <!-- Success Header -->
+            <div class="bg-gradient-to-r from-stack-orange to-orange-600 p-6 text-center">
+                <div class="flex flex-col items-center">
+                    <img src="../img/berhasil/berhasil.png" alt="Success" class="w-32 h-32 md:w-40 md:h-40 animate-bounce-slow">
+                    <h1 class="mt-6 text-3xl md:text-4xl font-bold text-white">Transaksi Berhasil!</h1>
+                    <p class="mt-2 text-orange-100">Pembelian Anda telah diproses</p>
+                </div>
+            </div>
+            
+            <!-- Transaction Details -->
+            <div class="p-6 md:p-8 space-y-6">
+                <div class="space-y-4">
+                    <div class="flex justify-between border-b border-gray-700 pb-3">
+                        <span class="text-gray-400 font-medium">Nama User:</span>
+                        <span class="font-semibold"><?= htmlspecialchars($transaksi['nama']) ?></span>
+                    </div>
+                    
+                    <div class="flex justify-between border-b border-gray-700 pb-3">
+                        <span class="text-gray-400 font-medium">Produk:</span>
+                        <span class="font-semibold text-stack-orange"><?= htmlspecialchars($transaksi['nama_modul']) ?></span>
+                    </div>
+                    
+                    <div class="flex justify-between border-b border-gray-700 pb-3">
+                        <span class="text-gray-400 font-medium">Harga:</span>
+                        <span class="font-semibold">Rp <?= number_format($transaksi['harga'], 0, ',', '.') ?></span>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <span class="text-gray-400 font-medium">Metode Pembayaran:</span>
+                        <span class="font-semibold"><?= htmlspecialchars($transaksi['metode_pembayaran']) ?></span>
+                    </div>
+                </div>
+                
+                <div class="pt-4 text-center text-sm text-gray-400 italic">
+                    *Cek produk Anda di menu Profile
+                </div>
+            </div>
+            
+            <!-- Action Button -->
+            <div class="px-6 md:px-8 pb-6 md:pb-8">
+                <a href="../mainpage.php" class="block">
+                    <button class="w-full bg-stack-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-orange-500/30">
+                        Kembali ke Beranda
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+    --color-stack-orange: #E05E2B;
+    --color-orange-hover: #D14E1A;
+    --color-orange-active: #C13A1A;
+    --color-profile: #141414;
+    --color-profile-modul: #252525;
+
+    --shadow-logo: '0 0 20px 5px rgba(255, 165, 0, 0.7)';
+
+    --font-hero: 'Mulish'
+}

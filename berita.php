@@ -25,7 +25,7 @@
                 </a>
                 <a href="berita.php" class="text-stack-orange font-semibold text-base md:text-lg">Berita</a>
                 <a href="./logout.php">
-                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,165,0,0.7)]">
+                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,165,0,0.7)] cursor-pointer">
                         Log Out
                     </button>
                 </a>

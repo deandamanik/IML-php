@@ -41,21 +41,21 @@ $stmt->close();
 
 // Get transaction history (combine all riwayat tables with modul joins)
 $stmt = $koneksi->prepare("
-    (SELECT 'akademi' as jenis, ra.tanggal_pembelian as tanggal, m.nama_modul, m.harga, ra.metode_pembayaran, ra.status
+    (SELECT 'AkademiMLBB' as jenis, ra.tanggal_pembelian as tanggal, m.nama_modul, m.harga, ra.metode_pembayaran, ra.status
      FROM riwayat_akademi ra
      JOIN modul m ON ra.id_modul = m.id
      WHERE ra.user_id = ?)
     
     UNION ALL
     
-    (SELECT 'coaching' as jenis, rc.tanggal_pembelian as tanggal, m.nama_modul, m.harga, rc.metode_pembayaran, rc.status
+    (SELECT 'Private Online CoachinG' as jenis, rc.tanggal_pembelian as tanggal, m.nama_modul, m.harga, rc.metode_pembayaran, rc.status
      FROM riwayat_coaching rc
      JOIN modul m ON rc.id_modul = m.id
      WHERE rc.user_id = ?)
     
     UNION ALL
     
-    (SELECT 'topup' as jenis, rt.tanggal_pembelian as tanggal, m.nama_modul, m.harga, rt.metode_pembayaran, rt.status
+    (SELECT 'Top Up Diamond' as jenis, rt.tanggal_pembelian as tanggal, m.nama_modul, m.harga, rt.metode_pembayaran, rt.status
      FROM riwayat_topup rt
      JOIN modul m ON rt.id_modul = m.id
      WHERE rt.user_id = ?)
@@ -97,7 +97,7 @@ $koneksi->close();
                 <a href="./modul/akademi.php" class="text-white font-semibold text-base md:text-lg">Transaksi</a>
                 <a href="berita.php" class="text-white font-semibold text-base md:text-lg">Berita</a>
                 <a href="./logout.php">
-                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]">
+                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] cursor-pointer">
                         Log Out
                     </button>
                 </a>
@@ -112,7 +112,7 @@ $koneksi->close();
             <!-- Modul Belajar Section -->
             <div class="lg:w-2/3 bg-profile p-6 rounded-xl">
                 <div class="flex items-center pb-2">
-                    <img src="./src/img/profile/Vector.png" alt="icon">
+                    <span class="text-white text-2xl"> 📑</span>
                     <h1 class="text-white text-2xl font-bold ml-4 italic">MODUL BELAJAR</h1>
                 </div>
                 <div class="w-full h-0.5 bg-white mb-4"></div>
@@ -121,13 +121,13 @@ $koneksi->close();
                     <?php if ($modules_result->num_rows > 0): ?>
                         <?php while($module = $modules_result->fetch_assoc()): ?>
                         <div class="bg-profile-modul p-4 rounded-lg">
-                            <div class="flex justify-between">
+                            <div class="flex justify-between items-center">
                                 <div>
                                     <p class="text-lg text-orange-400 font-bold ">Sedang Dipelajari</p>
                                     <p class="text-white text-md mt-3 font-semibold"><?= htmlspecialchars($module['nama_modul']) ?></p>
                                 </div>
                                 <a href="#">
-                                    <button class="bg-stack-orange px-4 py-2 rounded-xl text-white font-semibold text-sm hover:bg-orange-600 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.5)]">
+                                    <button class="bg-stack-orange px-4 py-2 rounded-xl text-white font-semibold text-sm hover:bg-orange-600 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.5)] cursor-pointer">
                                         Buka Modul
                                     </button>
                                 </a>
@@ -141,13 +141,13 @@ $koneksi->close();
                     <?php if ($coaching_result->num_rows > 0): ?>
                         <?php while($coaching = $coaching_result->fetch_assoc()): ?>
                         <div class="bg-profile-modul p-4 rounded-lg">
-                            <div class="flex justify-between">
+                            <div class="flex justify-between items-center">
                                 <div>
                                     <p class="text-lg text-orange-400 font-bold">Sedang Berlangsung</p>
                                     <p class="text-white text-md mt-3 font-semibold"><?= htmlspecialchars($coaching['nama_modul']) ?></p>
                                 </div>
                                 <a href="#">
-                                    <button class="bg-stack-orange px-4 py-2 rounded-xl text-white font-semibold text-sm hover:bg-orange-600 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.5)]">
+                                    <button class="bg-stack-orange px-4 py-2 rounded-xl text-white font-semibold text-sm hover:bg-orange-600 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.5)] cursor-pointer">
                                         Detail Modul
                                     </button>
                                 </a>
@@ -169,11 +169,11 @@ $koneksi->close();
                 <!-- Tabs -->
                 <div class="flex space-x-4 mb-4">
                     <button onclick="showTab('history')" id="history-btn"
-                        class="bg-orange-500 px-6 py-2 rounded-xl text-white font-semibold transition duration-300 hover:bg-orange-500 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]">
+                        class="bg-orange-500 px-6 py-2 rounded-xl text-white font-semibold transition duration-300 hover:bg-orange-500 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] cursor-pointer">
                         History
                     </button>
                     <button onclick="showTab('upcoming')" id="upcoming-btn"
-                        class="bg-gray-700 px-6 py-2 rounded-xl text-white font-semibold transition duration-300 hover:bg-orange-500 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]">
+                        class="bg-gray-700 px-6 py-2 rounded-xl text-white font-semibold transition duration-300 hover:bg-orange-500 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] cursor-pointer">
                         Upcoming
                     </button>
                 </div>

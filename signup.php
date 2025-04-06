@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body class="h-screen bg-[url('/iml/img/signup_bg.png')] bg-cover bg-center bg-no-repeat">
 
-    <section class="flex justify-center items-center py-36">
+    <section class="flex justify-center items-center md:pt-24 lg:pt-36">
         <div class="relative bg-profile bg-opacity-80 text-white p-8 rounded-xl w-[420px]">
 
             <a href="index.php">

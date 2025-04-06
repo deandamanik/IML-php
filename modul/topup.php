@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </a>
                 <a href="../berita.php" class="text-white font-semibold text-base md:text-lg">Berita</a>
                 <a href="../index.php">
-                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]">
+                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] cursor-pointer">
                         Log Out
                     </button>
                 </a>
@@ -126,11 +126,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <input type="text" name="server_id" id="server_id" placeholder="Contoh: 123456" required
                         class="w-full px-6 py-4 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500 text-lg mb-6">
                 </div>
-            </div>
-            <!-- Checkbox -->
-            <div class="flex items-center mt-6 md:mt-8">
-                <input type="checkbox" name="save_id" id="save_id" class="w-5 h-5 text-orange-500 border-gray-300 rounded focus:ring-orange-500">
-                <label for="save_id" class="ml-2 text-white text-sm">Simpan ID untuk pembelian berikutnya</label>
             </div>
         </section>
 

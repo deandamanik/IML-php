@@ -132,22 +132,24 @@ $koneksi->close();
         </div>
     </div>
 
-    <div class="px-6 md:px-12 lg:px-24 mt-8 space-y-4">
+    <div class="mt-6 px-6 md:px-12 lg:px-24 text-gray-400 text-sm">
+        <p>*Pastikan data yang dimasukkan sudah benar</p>
+    </div>
+
+    <div class="px-6 md:px-12 lg:px-24 mt-4 space-y-4">
         <form method="POST">
-            <button type="submit" class="w-full bg-stack-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-orange-500/20">
+            <button type="submit" 
+                    class="w-full py-3 bg-stack-orange rounded-xl text-white font-semibold block active:scale-98 hover:bg-orange-hover active:bg-orange-active shadow-xl transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
                 KONFIRMASI PEMBAYARAN
             </button>
         </form>
         
-        <a href="../pesansekarang/coaching.php" class="block">
-            <button class="w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">
-                BATALKAN TRANSAKSI
-            </button>
+        <a href="../pesansekarang/akademi.php" class="block">
+        <button class="w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg 
+                    transition-all duration-300 hover:shadow-[0_0_20px_5px_rgba(75,85,99,0.9)] cursor-pointer">
+            BATALKAN TRANSAKSI
+        </button>
         </a>
-    </div>
-
-    <div class="mt-12 px-6 text-center text-gray-400 text-sm">
-        <p>Pastikan data yang dimasukkan sudah benar</p>
     </div>
 </body>
 </html>

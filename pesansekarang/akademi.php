@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </a>
                     <a href="../berita.php" class="text-white font-semibold text-base md:text-lg">Berita</a>
                     <a href="../index.php">
-                        <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]">
+                        <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] cursor-pointer">
                             Log Out
                         </button>
                     </a>
@@ -74,15 +74,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         </header>
             
-        <div class="px-24 pt-28">
-            <h2 class="text-6xl font-semibold text-white"> Nama Modul :
-                <span class="text-stack-orange"><?php echo htmlspecialchars($nama_modul); ?></span>
+        <div class="px-24 pt-28 flex gap-6 items-center">
+            <a href="../modul/akademi.php">
+                <button type="button" class="text-white font-bold text-6xl cursor-pointer">
+                &larr;
+                </button>
+            </a>
+            <h2 class="md:text-5xl lg:text-6xl font-semibold text-white"> Modul :
+                <span class="text-stack-orange font-bold"><?php echo htmlspecialchars($nama_modul); ?></span>
             </h2>
         </div>
 
             <section class="max-w-screen">
-                <section class="flex items-center px-10 md:px-24 lg:px-24 gap-4 md:gap-6 py-12 md:py-16">
-                    <h2 class="text-white text-3xl md:text-4xl lg:text-5xl italic whitespace-nowrap">
+                <section class="flex items-center md:px-24 lg:px-24 gap-4 md:gap-6 md:py-10 py-12">
+                    <h2 class="text-white md:text-4xl lg:text-5xl italic whitespace-nowrap">
                         <span class="text-stack-orange">Masukan</span> Data akun
                     </h2>
                     <div class="flex-grow border-t border-white"></div>
@@ -92,59 +97,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <!-- Data diri Section -->
                 <form action="" method="POST">
                     <div class="px-28 max-w-[1850px]">
-                        <div class="grid grid-cols-2 gap-12 mt-4">
+                        <div class="grid grid-cols-2 md:gap-8 lg:gap-12">
                             <div class="flex flex-col gap-3">
                                 <label for="nama" class="text-white font-semibold text-lg">Nama</label>
-                                <input type="text" name="nama" placeholder="Contoh: 123456" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
+                                <input type="text" name="nama" placeholder="Contoh: Chandra Ganteng 123" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
                             </div>
                         
                             <div class="flex flex-col gap-3">
                                 <label for="email" class="text-white font-semibold text-lg">Alamat Email</label>
-                                <input type="text" name="email" placeholder="Contoh: 123456" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
+                                <input type="text" name="email" placeholder="Contoh: Chandraanjaymabar@gmail.com" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
                             </div> 
                         
                             <div class="flex flex-col gap-3">
-                                <label for="field3" class="text-white font-semibold text-lg">No telepon/Whatshap</label>
-                                <input type="text" name="phone" placeholder="Contoh: 123456" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
+                                <label for="phone" class="text-white font-semibold text-lg">No telepon/WhatsApp</label>
+                                <input type="text" name="phone" placeholder="Contoh: 08123456789" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
                             </div> 
                         
                             <div class="flex flex-col gap-3">
-                                <label for="field4" class="text-white font-semibold text-lg">Username Discord</label>
-                                <input type="text" name="discord" placeholder="Contoh: 123456" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
-                            </div> 
+                            <label for="discord" class="text-white font-semibold text-lg">Username Discord</label>
+                            <input type="text" name="discord" placeholder="Contoh: john_doe#1234" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
+                        </div> 
                         
                             <div class="flex flex-col gap-3">
-                                <label for="field5" class="text-white font-semibold text-lg">ID MLBB</label>
+                                <label for="idmlbb" class="text-white font-semibold text-lg">ID MLBB</label>
                                 <input type="text" name="idmlbb" placeholder="Contoh: 123456" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
                             </div> 
                         </div>  
                     </div>         
-
-                <!-- <section class="max-w-screen">
-                    <section class="flex items-center px-10 md:px-24 lg:px-24 gap-4 md:gap-6 py-12 md:py-16">
-                        <h2 class="text-white text-3xl md:text-4xl lg:text-5xl italic whitespace-nowrap">
-                            <span class="text-stack-orange">Pilihan</span> Modul
-                        </h2>
-                        <div class="flex-grow border-t border-white"></div>
-                    </section>
-                </section> -->
-
-                <!-- <div class="relative max-w-[1850px] px-10 md:px-24 lg:px-24">
-                    <div class="relative w-full max-w-4xl">
-                        <select name="id_modul" class="bg-stack-orange text-white font-bold text-lg px-6 py-3 rounded-xl shadow-lg focus:outline-none focus:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] w-full appearance-none pr-12">
-                            <option value="" selected disabled>Pilih Modul</option>
-                            <option value="1">Modul 1 - Chooseable Hero Guide</option>
-                            <option value="2">Modul 2 - Itemization Guide</option>
-                            <option value="3">Modul 3 - Mapping Guide</option>
-                            <option value="4">Modul 4 - Role Guide</option>
-                            <option value="5">Modul 5 - Drafting Guide</option>
-                        </select>
-                        <svg class="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </div>
-                </div>   -->
-
 
             <section class="max-w-screen">
                 <section class="flex items-center px-10 md:px-24 lg:px-24 gap-4 md:gap-6 py-12 md:py-16">
@@ -159,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <section class="flex">
                 <div class="flex flex-row justify-center gap-4 md:gap-10 lg:gap-16 px-6 md:px-28 lg:px-40">
                     <label class="relative cursor-pointer w-full max-w-[400px]">
-                        <input type="radio" name="payment" class="peer hidden" value="Dana">
+                        <input type="radio" name="payment" class="peer hidden" value="Dana" required>
                         <div class="w-full aspect-[16/9] bg-[#E65A2E] rounded-xl flex flex-col items-center justify-center px-4 py-2 gap-2
                             peer-checked:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] peer-checked:scale-105 transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
                             <img src="../img/wallet/dana.png" alt="Dana" class="w-32 md:w-36 lg:w-44">
@@ -168,7 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </label>
             
                     <label class="relative cursor-pointer w-full max-w-[400px]">
-                        <input type="radio" name="payment" class="peer hidden" value="Ovo">
+                        <input type="radio" name="payment" class="peer hidden" value="Ovo" required>
                         <div class="w-full aspect-[16/9] bg-[#E65A2E] rounded-xl flex flex-col items-center justify-center px-4 pt-3
                             peer-checked:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] peer-checked:scale-105 transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
                             <img src="../img/wallet/ovo.png" alt="OVO" class="w-32 md:w-36 lg:w-44">
@@ -177,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </label>
             
                     <label class="relative cursor-pointer w-full max-w-[400px]">
-                        <input type="radio" name="payment" class="peer hidden" value="Gopay">
+                        <input type="radio" name="payment" class="peer hidden" value="Gopay" required>
                         <div class="w-full aspect-[16/9] bg-[#E65A2E] rounded-xl flex flex-col items-center justify-center px-4 
                             peer-checked:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] peer-checked:scale-105 transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
                             <img src="../img/wallet/gopay.png" alt="Gopay" class="w-32 md:w-36 lg:w-44">
@@ -189,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <div class="w-full px-6 md:px-24 lg:px-36 mt-16">
                 
-                    <button type="submit" class="w-full bg-stack-orange px-8 py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-xl hover:scale-102 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)]">
+                    <button type="submit" class="w-full bg-stack-orange px-8 py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-xl hover:scale-102 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
                         Lakukan Pembayaran
                     </button>
             </div>

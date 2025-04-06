@@ -36,7 +36,7 @@ $username = $_SESSION['username'];
                 </a>
                 <a href="berita.php" class="text-white font-semibold text-base md:text-lg">Berita</a>
                 <a href="logout.php">
-                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]">
+                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] cursor-pointer">
                         Log Out
                     </button>
                 </a>
@@ -49,27 +49,27 @@ $username = $_SESSION['username'];
     <section class="min-h-screen relative">
         <div class="mt-24 py-12 px-6 md:px-12 lg:px-18 flex justify-end">
             <div>
-                <div class="w-full md:w-[60%] lg:w-[50%]">
+                <div class="w-full md:w-[50%] lg:w-[50%]">
                     <h1 class="text-white font-extrabold text-5xl md:text-6xl lg:text-7xl mb-6 md:mb-8 lg:mb-10 font-hero">
                         Welcome 
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-orange-500"><?php echo htmlspecialchars($username); ?></span>
                     </h1>
                 </div>
-                <div class="w-full md:w-[70%] lg:w-[55%]"> 
+                <div class="w-full md:w-[50%] lg:w-[55%]"> 
                     <p class="text-white font-semibold text-xl md:text-2xl lg:text-4xl font-hero">
                         Bergabunglah menjadi salah satu bagian dari kami dan mulai perjalanan 
                         <span class="text-orange-300">Anda</span> menuju kesuksesan di dunia
                         <span class="text-orange-300">Pro Scene</span> Mobile Legends!
                     </p>
                     <a href="./profile.php">
-                        <button class="mt-7 bg-stack-orange px-4 md:px-5 lg:px-6 py-2 md:py-2.5 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-xl hover:scale-105 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)]">
+                        <button class="mt-7 bg-stack-orange px-4 md:px-5 lg:px-6 py-2 md:py-2.5 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-xl hover:scale-105 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
                             Lihat Modul Anda
                         </button>
                     </a>
                 </div> 
             </div>
         </div>
-        <div class="absolute bottom-60 right-0 max-w-[800px] md:max-w-[950px] lg:max-w-[1050px]">
+        <div class="absolute md:bottom-50 lg:bottom-20 right-0 max-w-[800px] md:max-w-[700px] lg:max-w-[1050px]">
             <img src="img/beranda.png" class="w-full object-contain drop-shadow-[0_0_50px_rgba(255,120,0,0.3)]">
         </div>
     </section>
@@ -92,10 +92,10 @@ $username = $_SESSION['username'];
                         Dalam Materi ini kita akan membahas mengenai pembagian role pada suatu hero. Pada dasarnya tugas dalam suatu permainan tersebut dibagi berdasarkan oleh atribut & kemampuan hero terbagi menjadi 18 Role..
                     </p>
                 </div>
-            <div class="px-6 py-4 flex justify-between items-center">
+            <div class="px-6 py-4 flex justify-between items-center md:gap-4">
                 <span class="font-bold text-lg text-black">Rp.100,000</span>
                 <a href="./modul/akademi.php#mapping">
-                    <button class="bg-orange-500 px-4 py-2 rounded-lg text-white font-semibold shadow-xl active:scale-95 hover:bg-orange-600 active:bg-orange-700 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)]">
+                    <button class="bg-orange-500 px-4 py-2 lg:text-md rounded-lg text-white font-semibold shadow-xl active:scale-95 hover:bg-orange-600 active:bg-orange-700 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
                         Lihat Selengkapnya
                     </button>
                 </a>
@@ -114,10 +114,10 @@ $username = $_SESSION['username'];
                     Dalam Materi ini kita akan membahas mengenai pembagian role pada suatu hero. Pada dasarnya tugas dalam suatu permainan tersebut dibagi berdasarkan oleh atribut & kemampuan hero terbagi menjadi 18 Role..
                 </p>
             </div>
-            <div class="px-6 py-4 flex justify-between items-center">
+            <div class="px-6 py-4 flex justify-between items-center md:gap-4">
                 <span class="font-bold text-lg text-black">Rp.100,000</span>
                 <a href="./modul/akademi.php#role">
-                    <button class="bg-orange-500 px-4 py-2 rounded-lg text-white font-semibold shadow-xl active:scale-95 hover:bg-orange-600 active:bg-orange-700 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)]">
+                    <button class="bg-orange-500 px-4 py-2 rounded-lg text-white font-semibold shadow-xl active:scale-95 hover:bg-orange-600 active:bg-orange-700 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
                         Lihat Selengkapnya
                     </button>
                 </a>
@@ -136,10 +136,10 @@ $username = $_SESSION['username'];
                     Dalam Materi ini kita akan membahas mengenai pembagian role pada suatu hero. Pada dasarnya tugas dalam suatu permainan tersebut dibagi berdasarkan oleh atribut & kemampuan hero terbagi menjadi 18 Role..
                 </p>
             </div>
-            <div class="px-6 py-4 flex justify-between items-center">
+            <div class="px-6 py-4 flex justify-between items-center md:gap-4">
                 <span class="font-bold text-lg text-black">Rp.100,000</span>
                 <a href="./modul/akademi.php#drafting">
-                    <button class="bg-orange-500 px-4 py-2 rounded-lg text-white font-semibold shadow-xl active:scale-95 hover:bg-orange-600 active:bg-orange-700 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)]">
+                    <button class="bg-orange-500 px-4 py-2 rounded-lg text-white font-semibold shadow-xl active:scale-95 hover:bg-orange-600 active:bg-orange-700 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
                         Lihat Selengkapnya
                     </button>
                 </a> 
@@ -171,7 +171,7 @@ $username = $_SESSION['username'];
                         <span class="flex items-center">📍 Discord & Youtube</span>
                     </div>
                 </div>
-                <button class="bg-white px-6 py-4 rounded-lg shadow-md hover:bg-gray-100 active:scale-95 transition">
+                <button class="bg-white px-6 py-4 rounded-lg shadow-md hover:bg-gray-100 active:scale-95 transition cursor-pointer">
                     ➝
                 </button>
             </div>
@@ -197,7 +197,7 @@ $username = $_SESSION['username'];
                     </div>
                 </div>
 
-                <button class="bg-white px-6 py-4 rounded-lg shadow-md hover:bg-gray-100 active:scale-95 transition">
+                <button class="bg-white px-6 py-4 rounded-lg shadow-md hover:bg-gray-100 active:scale-95 transition cursor-pointer">
                     ➝
                 </button>
             </div>
@@ -223,7 +223,7 @@ $username = $_SESSION['username'];
                     </div>
                 </div>
 
-                <button class="bg-white px-6 py-4 rounded-lg shadow-md hover:bg-gray-100 active:scale-95 transition">
+                <button class="bg-white px-6 py-4 rounded-lg shadow-md hover:bg-gray-100 active:scale-95 transition cursor-pointer">
                     ➝
                 </button>
             </div>

@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="flex justify-between items-center gap-8 md:gap-12 lg:gap-16">
             <a href="#" id="openModal" class="text-white font-semibold text-base md:text-lg">Log In</a>
                 <a href="signup.php">
-                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]">
+                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] cursor-pointer">
                     Sign Up 
                 </button>
             </a>
@@ -76,27 +76,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section class="min-h-screen relative">
         <div class="mt-24 py-12 px-6 md:px-12 lg:px-18 flex justify-end">
             <div>
-                <div class="w-full md:w-[60%] lg:w-[50%]">
+                <div class="w-full md:w-[40%] lg:w-[60%]">
                     <h1 class="text-white font-extrabold text-5xl md:text-6xl lg:text-7xl mb-6 md:mb-8 lg:mb-10 font-hero">
                         Be The One Above All 
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-orange-500">With Us</span>
                     </h1>
                 </div>
-                <div class="w-full md:w-[70%] lg:w-[55%]"> 
+                <div class="w-full md:w-[50%] lg:w-[55%]"> 
                     <p class="text-white font-semibold text-xl md:text-2xl lg:text-4xl font-hero">
                         60% Murid di Akademi ini berhasil masuk ke 
                         <span class="text-orange-300">Pro Scene</span> Mobile Legends dalam waktu 
                         <span class="text-orange-300">3 Bulan</span> menggunakan strategi kami.
                     </p>
                     <a href="#" id="openModal">
-                        <button class="mt-7 bg-stack-orange px-4 md:px-5 lg:px-6 py-2 md:py-2.5 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-xl hover:scale-105 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)]">
+                        <button class="mt-7 bg-stack-orange px-4 md:px-5 lg:px-6 py-2 md:py-2.5 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-xl hover:scale-105 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
                             Get started
                         </button>
                     </a>
                 </div> 
             </div>
         </div>
-        <div class="absolute bottom-[-80px] right-0 max-w-[800px] md:max-w-[950px] lg:max-w-[1050px]">
+        <div class="absolute md:bottom-[-10px] lg:bottom-[-160px] right-0 max-w-[800px] md:max-w-[700px] lg:max-w-[1020px]">
             <img src="img/index.png" class="w-full object-contain drop-shadow-[0_0_50px_rgba(255,120,0,0.3)]">
         </div>
     </section>
@@ -105,9 +105,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- Kenapa kami Section -->
         <section class="px-12 py-24 flex flex-col items-center justify-center min-h-screen">
             <img src="img/landingpage/1.png" alt="">
-            <div class="w-xl px-6  md:px-36 mt-16">
+            <div class="w-xl px-6 md:px-36 mt-16">
                 <a href="#" id="openModal">
-                    <button class="w-full bg-stack-orange px-8 py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-xl hover:scale-105 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)]">
+                    <button class="w-full bg-stack-orange px-8 py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-xl hover:scale-105 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
                         Join Now
                     </button>
                 </a>
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div id="loginModal" class="hidden">
     <div class="flex items-center justify-center fixed inset-0 bg-opacity-30 backdrop-blur-md">
         <div id="modalContent" class="relative bg-profile text-white rounded-3xl shadow-lg px-8 py-10 w-[90%] max-w-md translate-y-[-50px] opacity-0 transition-all duration-500">
-            <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-200 text-4xl">&times;</button>
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-200 text-4xl cursor-pointer">&times;</button>
             <img src="img/dexter1.png" alt="Karakter" class="absolute -top-20 left transform -translate-x-1/2 w-36 md:w-50">
             <h2 class="text-center text-4xl font-bold italic mt-12">LOGIN</h2>
             <?php if (!empty($error)): ?>
@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label class="text-sm font-semibold">PASSWORD</label>
                     <input type="password" name="password" required placeholder="Masukkan Password" class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg mt-2 focus:ring-2 focus:ring-orange-500">
                 </div>
-                <button type="submit" class="w-full bg-stack-orange text-white my-4 py-2 rounded-lg font-semibold text-lg shadow-md hover:bg-orange-hover active:bg-orange-active transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)]">
+                <button type="submit" class="w-full bg-stack-orange text-white my-4 py-2 rounded-lg font-semibold text-lg shadow-md hover:bg-orange-hover active:bg-orange-active transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
                     Login
                 </button>
             </form>
@@ -158,6 +158,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 <script src="js/index.js"></script>
+<script src="js/loading.js"></script>
+
 </body>
 </html>
 

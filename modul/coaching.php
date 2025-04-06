@@ -34,7 +34,7 @@
                 </a>
                 <a href="../berita.php" class="text-white font-semibold text-base md:text-lg">Berita</a>
                 <a href="../index.php">
-                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]">
+                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] cursor-pointer">
                         Log Out
                     </button>
                 </a>
@@ -74,14 +74,14 @@
     </section>
 
     <!-- Coaching Section -->
-    <section class="w-full px-8 md:px-16 lg:px-36 py-10">
+    <section class="w-full px-8 md:px-12 lg:px-16 py-10">
         <div class="flex flex-col gap-20">
         
         <!-- Solo Coaching -->
-        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-40">
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-30">
             <img src="../img/coaching/solo.png" alt="Solo Coaching" class="w-full max-w-md lg:max-w-xl">
             <div class="text-white">
-                <h1 class="text-4xl lg:text-6xl font-semibold"><span class="text-stack-orange">Solo</span> Coaching</h1>
+                <h1 class="text-5xl lg:text-6xl font-semibold"><span class="text-stack-orange">Solo</span> Coaching</h1>
                 <h4 class="mt-5 font-semibold">PRIVATE COACHING VIA DISCORD</h4>
                 <p class="mt-4 text-lg max-w-2xl">Get personalized 1-on-1 coaching sessions with our professional coaches. We'll analyze your gameplay, identify weaknesses, and provide tailored strategies to help you climb the ranks. Sessions include live gameplay analysis, role-specific training, and personalized improvement plans.</p>
                 <div class="bg-white h-[1px] mt-7"></div>
@@ -96,10 +96,10 @@
         </div>
 
         <!-- Squad Coaching -->
-        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-40">
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-30">
             <img src="../img/coaching/squad.png" alt="Squad Coaching" class="w-full max-w-md lg:max-w-xl">
             <div class="text-white">
-                <h1 class="text-4xl lg:text-6xl font-semibold"><span class="text-stack-orange">Squad</span> Coaching</h1>
+                <h1 class="text-5xl lg:text-6xl font-semibold"><span class="text-stack-orange">Squad</span> Coaching</h1>
                 <h4 class="mt-5 font-semibold">TEAM COACHING VIA DISCORD</h4>
                 <p class="mt-4 text-lg max-w-2xl">Improve your team's coordination and strategy with our squad coaching. Perfect for teams preparing for tournaments or looking to improve their rank. Includes team composition analysis, rotation strategies, communication improvement, and tournament preparation.</p>
                 <div class="bg-white h-[1px] mt-7"></div>

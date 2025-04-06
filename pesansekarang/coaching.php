@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </a>
                 <a href="../berita.php" class="text-white font-semibold text-base md:text-lg">Berita</a>
                 <a href="../index.php">
-                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]">
+                    <button class="bg-stack-orange px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-lg hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] cursor-pointer">
                         Log Out
                     </button>
                 </a>
@@ -88,15 +88,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
     </header>
     
-    <div class="px-24 pt-28">
-        <h2 class="text-6xl font-semibold text-white"> Jenis Coaching :
-            <span class="text-stack-orange"><?php echo htmlspecialchars($nama_modul); ?></span>
+    <div class="px-24 pt-28 flex gap-6 items-center">
+    <a href="../modul/coaching.php">
+                <button type="button" class="text-white font-bold text-6xl cursor-pointer">
+                &larr;
+                </button>
+            </a>
+        <h2 class="md:text-5xl lg:text-6xl font-semibold text-white"> Jenis Coaching :
+            <span class="text-stack-orange font-bold"><?php echo htmlspecialchars($nama_modul); ?></span>
         </h2>
     </div>
 
     <section class="max-w-screen">
-        <section class="flex items-center px-10 md:px-24 lg:px-24 gap-4 md:gap-6 py-12 md:py-16">
-            <h2 class="text-white text-3xl md:text-4xl lg:text-5xl italic whitespace-nowrap">
+        <section class="flex items-center md:px-24 lg:px-24 gap-4 md:gap-6 md:py-10 py-12">
+            <h2 class="text-white md:text-4xl lg:text-5xl italic whitespace-nowrap">
                 <span class="text-stack-orange">Masukan</span> Data akun
             </h2>
             <div class="flex-grow border-t border-white"></div>
@@ -106,15 +111,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <!-- Data diri Section -->
     <form action="" method="POST">
         <div class="px-28 max-w-[1850px]">
-            <div class="grid grid-cols-2 gap-12 mt-4">
+            <div class="grid grid-cols-2 md:gap-8 lg:gap-12">
                 <div class="flex flex-col gap-3">
                     <label for="nama" class="text-white font-semibold text-lg">Nama</label>
-                    <input type="text" name="nama" placeholder="Contoh: John Doe" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
+                    <input type="text" name="nama" placeholder="Contoh: Anca Ganteng 123" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
                 </div>
             
                 <div class="flex flex-col gap-3">
                     <label for="email" class="text-white font-semibold text-lg">Alamat Email</label>
-                    <input type="email" name="email" placeholder="Contoh: johndoe@example.com" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
+                    <input type="email" name="email" placeholder="Contoh: Ancadannadia@gmail.com" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
                 </div> 
             
                 <div class="flex flex-col gap-3">
@@ -124,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
                 <div class="flex flex-col gap-3">
                     <label for="discord" class="text-white font-semibold text-lg">Username Discord</label>
-                    <input type="text" name="discord" placeholder="Contoh: john_doe#1234" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
+                    <input type="text" name="discord" placeholder="Contoh: ANADFOREVER" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
                 </div> 
             
                 <div class="flex flex-col gap-3">
@@ -209,7 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </section>
 
         <div class="w-full px-6 md:px-24 lg:px-36 mt-16">
-            <button type="submit" class="w-full bg-stack-orange px-8 py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-xl hover:scale-102 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)]">
+            <button type="submit" class="w-full bg-stack-orange px-8 py-3 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-xl hover:scale-102 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
                 Lakukan Pembayaran
             </button>
         </div>

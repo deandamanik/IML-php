@@ -42,7 +42,7 @@ unset($_SESSION['form_data']);
         <!-- Success Header with Gradient -->
         <div class="bg-gradient-to-r from-stack-orange to-orange-600 p-6 text-center">
             <div class="flex flex-col items-center">
-                <img src="../img/berhasil/berhasil.png" alt="Success" class="animate-[float_3s_ease-in-out_infinite] w-32 h-32 md:w-40 md:h-40">
+                <img src="../img/berhasil/berhasil.png" alt="Success" class="w-32 h-32 md:w-40 md:h-40 animate-bounce">
                 <h1 class="mt-4 text-3xl md:text-4xl font-bold text-white">Transaksi Berhasil!</h1>
                 <p class="mt-2 text-orange-100">Pembelian Anda telah diproses</p>
             </div>
@@ -81,10 +81,10 @@ unset($_SESSION['form_data']);
         <!-- Footer Section -->
         <div class="px-6 md:px-8 pb-6 md:pb-8">
             <p class="text-center text-sm text-gray-400 italic mb-4">*Cek Produk anda di Profile</p>
-            <a href="../mainpage.php">
-                <button class="w-full bg-stack-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-orange-500/30">
-                    Kembali ke Beranda
-                </button>
+            <a href="../profile.php">
+            <button class="w-full py-3 bg-stack-orange rounded-xl text-white font-semibold block active:scale-98 hover:bg-orange-hover active:bg-orange-active shadow-xl transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
+                        Kembali ke Beranda
+                    </button>
             </a>
         </div>
     </div>

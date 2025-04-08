@@ -69,7 +69,7 @@ $username = $_SESSION['username'];
                 </div> 
             </div>
         </div>
-        <div class="absolute md:bottom-50 lg:bottom-20 right-0 max-w-[800px] md:max-w-[700px] lg:max-w-[1050px]">
+        <div class="absolute md:bottom-40 lg:bottom-20 right-0 max-w-[800px] md:max-w-[700px] lg:max-w-[1050px]">
             <img src="img/beranda.png" class="w-full object-contain drop-shadow-[0_0_50px_rgba(255,120,0,0.3)]">
         </div>
     </section>

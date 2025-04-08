@@ -93,14 +93,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div> 
             </div>
         </div>
-        <div class="absolute md:bottom-[-10px] lg:bottom-[-160px] right-0 max-w-[800px] md:max-w-[700px] lg:max-w-[1020px]">
+        <div class="absolute md:bottom-[-10px] lg:bottom-[-170px] right-0 max-w-[800px] md:max-w-[700px] lg:max-w-[1000px]">
             <img src="img/index.png" class="w-full object-contain drop-shadow-[0_0_50px_rgba(255,120,0,0.3)]">
         </div>
     </section>
 
 
         <!-- Kenapa kami Section -->
-        <section class="px-12 py-24 flex flex-col items-center justify-center min-h-screen">
+        <section class="px-12 py-28 mt-24 flex flex-col items-center justify-center min-h-screen">
             <img src="img/landingpage/1.png" alt="">
             <div class="w-xl px-6 md:px-36 mt-16">
                 <a href="#" id="openModal">

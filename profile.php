@@ -1,21 +1,16 @@
 <?php
 session_start();
 
-// Check if user is logged in
+include 'db.php';
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: index.php");
     exit();
 }
 
-// Database connection
-include 'db.php';
-
-// Get user data
 $user_id = $_SESSION['user_id'];
-
-// Get learning modules (join with modul table)
 $stmt = $koneksi->prepare("
-    SELECT ra.*, m.nama_modul, m.harga 
+    SELECT ra.*, m.nama_modul, m.harga, m.kategori
     FROM riwayat_akademi ra
     JOIN modul m ON ra.id_modul = m.id
     WHERE ra.user_id = ? 
@@ -26,9 +21,8 @@ $stmt->execute();
 $modules_result = $stmt->get_result();
 $stmt->close();
 
-// Get coaching sessions (join with modul table)
 $stmt = $koneksi->prepare("
-    SELECT rc.*, m.nama_modul, m.harga 
+    SELECT rc.*, m.nama_modul, m.harga, m.kategori
     FROM riwayat_coaching rc
     JOIN modul m ON rc.id_modul = m.id
     WHERE rc.user_id = ? 
@@ -41,21 +35,21 @@ $stmt->close();
 
 // Get transaction history (combine all riwayat tables with modul joins)
 $stmt = $koneksi->prepare("
-    (SELECT 'AkademiMLBB' as jenis, ra.tanggal_pembelian as tanggal, m.nama_modul, m.harga, ra.metode_pembayaran, ra.status
+    (SELECT m.kategori as jenis, ra.tanggal_pembelian as tanggal, m.nama_modul, m.harga, ra.metode_pembayaran, ra.status
      FROM riwayat_akademi ra
      JOIN modul m ON ra.id_modul = m.id
      WHERE ra.user_id = ?)
     
     UNION ALL
     
-    (SELECT 'Private Online CoachinG' as jenis, rc.tanggal_pembelian as tanggal, m.nama_modul, m.harga, rc.metode_pembayaran, rc.status
+    (SELECT m.kategori as jenis, rc.tanggal_pembelian as tanggal, m.nama_modul, m.harga, rc.metode_pembayaran, rc.status
      FROM riwayat_coaching rc
      JOIN modul m ON rc.id_modul = m.id
      WHERE rc.user_id = ?)
     
     UNION ALL
     
-    (SELECT 'Top Up Diamond' as jenis, rt.tanggal_pembelian as tanggal, m.nama_modul, m.harga, rt.metode_pembayaran, rt.status
+    (SELECT m.kategori as jenis, rt.tanggal_pembelian as tanggal, m.nama_modul, m.harga, rt.metode_pembayaran, rt.status
      FROM riwayat_topup rt
      JOIN modul m ON rt.id_modul = m.id
      WHERE rt.user_id = ?)
@@ -68,7 +62,6 @@ $stmt->execute();
 $transactions_result = $stmt->get_result();
 $stmt->close();
 
-// Close connection
 $koneksi->close();
 ?>
 
@@ -107,9 +100,7 @@ $koneksi->close();
 
     <!-- Main Content -->
     <section class="flex flex-col p-6 md:p-8 lg:p-10 gap-8">
-        <!-- Top Row - Modul Belajar dan Tournament -->
         <div class="flex flex-col lg:flex-row gap-8">
-            <!-- Modul Belajar Section -->
             <div class="lg:w-2/3 bg-profile p-6 rounded-xl">
                 <div class="flex items-center pb-2">
                     <span class="text-white text-2xl"> 📑</span>
@@ -166,7 +157,6 @@ $koneksi->close();
                 </div>
                 <div class="w-full h-0.5 bg-white mb-4 mt-[14px]"></div>
             
-                <!-- Tabs -->
                 <div class="flex space-x-4 mb-4">
                     <button onclick="showTab('history')" id="history-btn"
                         class="bg-orange-500 px-6 py-2 rounded-xl text-white font-semibold transition duration-300 hover:bg-orange-500 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] cursor-pointer">
@@ -177,8 +167,6 @@ $koneksi->close();
                         Upcoming
                     </button>
                 </div>
-            
-                <!-- History Content -->
                 <div id="history" class="space-y-2">
                     <div class="bg-profile-modul p-3 rounded-lg flex justify-between">
                         <p class="text-white text-sm font-bold">MLBB AXIS TOURNAMENT SEASON 1</p>
@@ -190,7 +178,6 @@ $koneksi->close();
                     </div>
                 </div>
             
-                <!-- Upcoming Tournament Content (Hidden by Default) -->
                 <div id="upcoming" class="space-y-2 hidden">
                     <div class="bg-profile-modul p-3 rounded-lg flex justify-between">
                         <p class="text-white text-sm font-bold">MLBB AXIS TOURNAMENT SEASON 2</p>
@@ -204,7 +191,7 @@ $koneksi->close();
             </div>
         </div>
         
-        <!-- Bottom Row - Riwayat Transaksi (Full Width) -->
+        <!-- Riwayat Transaksi-->
         <div class="bg-profile p-6 rounded-xl">
             <div class="flex items-center pb-2">
                 <span class="text-white text-2xl">📋</span>
@@ -217,8 +204,8 @@ $koneksi->close();
                     <thead>
                         <tr class="bg-stack-orange text-white">
                             <th class="p-4 border border-slate-300">NO</th>
-                            <th class="p-4 border border-slate-300">JENIS</th>
-                            <th class="p-4 border border-slate-300">PRODUK</th>
+                            <th class="p-4 border border-slate-300">JENIS PRODUK</th>
+                            <th class="p-4 border border-slate-300">NAMA PRODUK</th>
                             <th class="p-4 border border-slate-300">TANGGAL</th>
                             <th class="p-4 border border-slate-300">TOTAL</th>
                             <th class="p-4 border border-slate-300">STATUS</th>
@@ -259,22 +246,7 @@ $koneksi->close();
         </div>
     </section>
 
-    <script>
-        function showTab(tab) {
-            document.getElementById('history').classList.add('hidden');
-            document.getElementById('upcoming').classList.add('hidden');
-            
-            document.getElementById('history-btn').classList.remove('bg-orange-500', 'shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]');
-            document.getElementById('history-btn').classList.add('bg-gray-700');
-            
-            document.getElementById('upcoming-btn').classList.remove('bg-orange-500', 'shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]');
-            document.getElementById('upcoming-btn').classList.add('bg-gray-700');
-    
-            document.getElementById(tab).classList.remove('hidden');
-            document.getElementById(tab + '-btn').classList.add('bg-orange-500', 'shadow-[0_0_15px_4px_rgba(255,120,0,0.9)]');
-            document.getElementById(tab + '-btn').classList.remove('bg-gray-700');
-        }
-    </script>
+    <script src="js/tournament.js"></script>
 
 </body>
 </html>

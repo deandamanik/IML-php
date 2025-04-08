@@ -2,15 +2,12 @@
 session_start();
 include '../db.php';
 
-// Verifikasi ID transaksi
 if (!isset($_GET['id'])) {
     header("Location: ../akademi.php");
     exit();
 }
 
 $transaksi_id = (int)$_GET['id'];
-
-// Ambil data transaksi
 $sql = "SELECT r.*, m.nama_modul, m.harga 
         FROM riwayat_akademi r
         JOIN modul m ON r.id_modul = m.id
@@ -46,7 +43,6 @@ $koneksi->close();
     <div class="min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 py-12">
         <div class="w-full max-w-2xl bg-gradient-to-br from-gray-900 to-black rounded-2xl border border-gray-700 shadow-2xl overflow-hidden">
             
-            <!-- Success Header -->
             <div class="bg-gradient-to-r from-stack-orange to-orange-600 p-6 text-center">
                 <div class="flex flex-col items-center">
                     <img src="../img/berhasil/berhasil.png" alt="Success" class="w-32 h-32 md:w-40 md:h-40 animate-bounce">
@@ -55,7 +51,6 @@ $koneksi->close();
                 </div>
             </div>
             
-            <!-- Transaction Details -->
             <div class="p-6 md:p-8 space-y-6">
                 <div class="space-y-4">
                     <div class="flex justify-between border-b border-gray-700 pb-3">
@@ -84,7 +79,6 @@ $koneksi->close();
                 </div>
             </div>
             
-            <!-- Action Button -->
             <div class="px-6 md:px-8 pb-6 md:pb-8">
                 <a href="../profile.php">
                     <button class="w-full py-3 bg-stack-orange rounded-xl text-white font-semibold block active:scale-98 hover:bg-orange-hover active:bg-orange-active shadow-xl transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">

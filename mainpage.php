@@ -76,7 +76,6 @@ $username = $_SESSION['username'];
 
 
     <!-- Program Pilihan Section -->
-
     <section class="px-12 py-24 flex flex-col items-center justify-center">
         <h2 class="text-white text-6xl font-bold">Program Pilihan Kami</h2>
 
@@ -86,13 +85,13 @@ $username = $_SESSION['username'];
                     <img src="img/progpil/11.png" alt="Mapping Guide" class="w-full">
                     <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-gray-900 to-transparent"></div>
                 </div>
-                <div class="px-6 pb-8 pt-4">
+                <div class="px-6 md:pb-2 lg:pb-8 pt-4">
                     <h2 class="text-xl font-bold text-black text-center pb-4">Mapping Guide</h2>
-                    <p class="mt-2 text-gray-700 text-sm">
+                    <p class="lg:mt-2 text-gray-700 text-sm">
                         Dalam Materi ini kita akan membahas mengenai pembagian role pada suatu hero. Pada dasarnya tugas dalam suatu permainan tersebut dibagi berdasarkan oleh atribut & kemampuan hero terbagi menjadi 18 Role..
                     </p>
                 </div>
-            <div class="px-6 py-4 flex justify-between items-center md:gap-4">
+            <div class="px-6 md:pb-2 lg:py-4 flex md:flex-col lg:flex-row justify-between items-center md:gap-4">
                 <span class="font-bold text-lg text-black">Rp.100,000</span>
                 <a href="./modul/akademi.php#mapping">
                     <button class="bg-orange-500 px-4 py-2 lg:text-md rounded-lg text-white font-semibold shadow-xl active:scale-95 hover:bg-orange-600 active:bg-orange-700 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
@@ -108,13 +107,13 @@ $username = $_SESSION['username'];
                 <img src="img/progpil/22.png" alt="Mapping Guide" class="w-full">
                 <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
             </div>
-            <div class="px-6 pt-4 pb-8">
+            <div class="px-6 pt-4 md:pb-2 lg:pb-8">
                 <h2 class="text-xl font-bold text-black text-center pb-4">Chooseable Role Guide</h2>
-                <p class="mt-2 text-gray-700 text-sm">
+                <p class="lg:mt-2 text-gray-700 text-sm">
                     Dalam Materi ini kita akan membahas mengenai pembagian role pada suatu hero. Pada dasarnya tugas dalam suatu permainan tersebut dibagi berdasarkan oleh atribut & kemampuan hero terbagi menjadi 18 Role..
                 </p>
             </div>
-            <div class="px-6 py-4 flex justify-between items-center md:gap-4">
+            <div class="px-6 md:pb-2 lg:py-4 flex md:flex-col lg:flex-row justify-between items-center md:gap-4">
                 <span class="font-bold text-lg text-black">Rp.100,000</span>
                 <a href="./modul/akademi.php#role">
                     <button class="bg-orange-500 px-4 py-2 rounded-lg text-white font-semibold shadow-xl active:scale-95 hover:bg-orange-600 active:bg-orange-700 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
@@ -130,13 +129,13 @@ $username = $_SESSION['username'];
                 <img src="img/progpil/33.png" alt="Mapping Guide" class="w-full">
                 <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-gray-900 to-transparent"></div>
             </div>
-            <div class="px-6 pt-4 pb-8">
+            <div class="px-6 pt-4 md:pb-2 lg:pb-8">
                 <h2 class="text-xl font-bold text-black text-center pb-4">Drafting Guide</h2>
-                <p class="mt-2 text-gray-700 text-sm">
+                <p class="lg:mt-2 text-gray-700 text-sm">
                     Dalam Materi ini kita akan membahas mengenai pembagian role pada suatu hero. Pada dasarnya tugas dalam suatu permainan tersebut dibagi berdasarkan oleh atribut & kemampuan hero terbagi menjadi 18 Role..
                 </p>
             </div>
-            <div class="px-6 py-4 flex justify-between items-center md:gap-4">
+            <div class="px-6 md:pb-2 lg:py-4 flex md:flex-col lg:flex-row justify-between items-center md:gap-4">
                 <span class="font-bold text-lg text-black">Rp.100,000</span>
                 <a href="./modul/akademi.php#drafting">
                     <button class="bg-orange-500 px-4 py-2 rounded-lg text-white font-semibold shadow-xl active:scale-95 hover:bg-orange-600 active:bg-orange-700 transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
@@ -148,10 +147,11 @@ $username = $_SESSION['username'];
     </div>
 </section>
 
-<section class="px-6 md:px-12 lg:px-24 py-16 flex flex-col items-center justify-center">
-    <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center">Info Tournament</h2>
+    <!-- Info Tournament Section -->
+    <section class="px-6 md:px-12 lg:px-24 py-16 flex flex-col items-center justify-center">
+        <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center">Info Tournament</h2>
 
-    <div class="w-full max-w-4xl mt-12 space-y-6">
+        <div class="w-full max-w-4xl mt-12 space-y-6">
         
         <!-- Event Item 1-->
         <div class="flex items-center space-x-4 w-full max-w-4xl gap-12">

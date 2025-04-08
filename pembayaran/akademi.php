@@ -8,8 +8,6 @@ if (!isset($_SESSION['form_data'])) {
 }
 
 $form_data = $_SESSION['form_data'];
-
-// Get module details including price
 $modul_stmt = $koneksi->prepare("SELECT nama_modul, harga FROM modul WHERE id = ?");
 $modul_stmt->bind_param("i", $form_data['id_modul']);
 $modul_stmt->execute();

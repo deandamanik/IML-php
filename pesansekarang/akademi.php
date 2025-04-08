@@ -7,13 +7,11 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Ambil id_modul dari session
 $id_modul = $_SESSION['id_modul'] ?? '';
 if (empty($id_modul)) {
     die("Error: ID Modul tidak ditemukan.");
 }
 
-// Ambil nama modul
 $cek_modul = $koneksi->prepare("SELECT nama_modul FROM modul WHERE id = ?");
 $cek_modul->bind_param("i", $id_modul);
 $cek_modul->execute();
@@ -21,9 +19,7 @@ $result = $cek_modul->get_result();
 $nama_modul = $result->fetch_assoc()['nama_modul'] ?? 'Modul Tidak Ditemukan';
 $cek_modul->close();
 
-// Handle form submission
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Simpan data ke session
     $_SESSION['form_data'] = [
         'nama' => trim($_POST['nama']),
         'email' => trim($_POST['email']),
@@ -115,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         
                             <div class="flex flex-col gap-3">
                             <label for="discord" class="text-white font-semibold text-lg">Username Discord</label>
-                            <input type="text" name="discord" placeholder="Contoh: john_doe#1234" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
+                            <input type="text" name="discord" placeholder="Contoh: ChanboysayangkakRika" class="max-w-[750px] px-4 py-3 bg-gray-200 text-black rounded-xl outline-none focus:ring-2 focus:ring-orange-500" required>
                         </div> 
                         
                             <div class="flex flex-col gap-3">
@@ -182,6 +178,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <p class="font-bold text-lg md:text-xl lg:text-2xl">Copyright © 2025 All rights reserved</p>
                     </div>
                 </div>
-
-        </body>
-        </html>
+    </body>
+</html>

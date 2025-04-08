@@ -9,7 +9,6 @@ if (!isset($_SESSION['form_data'])) {
 
 $form_data = $_SESSION['form_data'];
 
-// Ambil data modul termasuk harga
 $modul_stmt = $koneksi->prepare("SELECT nama_modul, harga FROM modul WHERE id = ?");
 $modul_stmt->bind_param("i", $form_data['id_modul']);
 $modul_stmt->execute();
@@ -40,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 metode_pembayaran
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
-        // Sesuaikan bind_param (9 parameter sekarang)
         $stmt = $koneksi->prepare($sql);
         $stmt->bind_param("issssssss", 
             $_SESSION['user_id'],

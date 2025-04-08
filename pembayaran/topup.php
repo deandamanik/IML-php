@@ -6,7 +6,6 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['form_data'])) {
     exit();
 }
 
-// PROSES PEMBAYARAN
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include '../db.php';
     
@@ -39,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// TAMPILAN
 $form_data = $_SESSION['form_data'];
 $id_mlbb = $form_data['id_mlbb'];
 $server_id = $form_data['server_id'];

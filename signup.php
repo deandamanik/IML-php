@@ -1,5 +1,5 @@
 <?php
-require 'db.php'; // Menghubungkan ke database
+require 'db.php'; 
 
 $error = "";
 $success = "";
@@ -10,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = trim($_POST['phone']);
     $password = trim($_POST['password']);
 
-    // Cek apakah username atau email sudah digunakan
     $check_sql = "SELECT * FROM users WHERE username = ? OR email = ?";
     $stmt = $koneksi->prepare($check_sql);
     $stmt->bind_param("ss", $username, $email);
@@ -20,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $error = "Username atau Email sudah digunakan!";
     } else {
-        // Masukkan data ke database
         $insert_sql = "INSERT INTO users (username, email, phone, password) VALUES (?, ?, ?, ?)";
         $stmt = $koneksi->prepare($insert_sql);
         $stmt->bind_param("ssss", $username, $email, $phone, $password);
@@ -59,8 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </a>
     
             <h1 class="text-center text-2xl font-bold mb-4">DAFTAR AKUN</h1>
-
-            <!-- Menampilkan pesan error atau sukses -->
+            
             <?php if (!empty($error)): ?>
                 <div class="text-red-500 font-semibold py-4 text-center">
                     <?php echo $error; ?>

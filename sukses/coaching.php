@@ -2,7 +2,6 @@
 session_start();
 include '../db.php';
 
-// Check if transaction ID is provided
 if (!isset($_GET['id'])) {
     header("Location: ../coaching.php");
     exit();
@@ -10,7 +9,6 @@ if (!isset($_GET['id'])) {
 
 $transaksi_id = (int)$_GET['id'];
 
-// Get transaction details from database
 $sql = "SELECT r.*, m.nama_modul, m.harga
         FROM riwayat_coaching r
         JOIN modul m ON r.id_modul = m.id
@@ -44,7 +42,6 @@ $koneksi->close();
 <body class="bg-black text-white min-h-screen flex items-center justify-center p-4">
 
     <div class="w-full max-w-2xl bg-black rounded-xl border border-gray-700 shadow-2xl overflow-hidden">
-        <!-- Success Header with Gradient -->
         <div class="bg-gradient-to-r from-stack-orange to-orange-600 p-6 text-center">
             <div class="flex flex-col items-center">
                 <img src="../img/berhasil/berhasil.png" alt="Success" class="w-32 h-32 md:w-40 md:h-40 animate-bounce">
@@ -53,7 +50,6 @@ $koneksi->close();
             </div>
         </div>
 
-        <!-- Transaction Details -->
         <div class="p-6 md:p-8 space-y-6">
             <div class="space-y-4">
                 <div class="flex justify-between border-b border-gray-700 pb-3">

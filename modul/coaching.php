@@ -1,11 +1,11 @@
-    <?php
+<?php
     session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_modul'])) {
         $_SESSION['id_modul'] = $_POST['id_modul'];
-        header("Location: ../pesansekarang/coaching.php"); // Redirect after submit
+        header("Location: ../pesansekarang/coaching.php"); 
         exit();
     }
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -44,19 +44,19 @@
     
     <!-- Pilihan Section -->
     <section class="max-w-screen">
-        <div class="flex pt-16 px-10 md:pt-20 md:px-24 lg:px-32 gap-6 md:gap-12">
+        <div class="flex pt-16 px-10 md:pt-20 md:px-16 lg:px-32 gap-6 md:gap-8">
             <a href="akademi.php">
-                <button class="bg-stack-orange px-8 py-3 md:px-12 md:py-3 lg:px-16 lg:py-4 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-md hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] text-lg md:text-xl">
+                <button class="bg-stack-orange px-8 py-3 md:px-12 md:py-3 lg:px-16 lg:py-4 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-md hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] text-lg md:text-xl whitespace-nowrap">
                     Akademi MLBB
                 </button>
             </a>            
             <a href="coaching.php">
-                <button class="bg-stack-orange px-8 py-3 md:px-12 md:py-3 lg:px-16 lg:py-4 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active hover:scale-105 transition duration-300 shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] text-lg md:text-xl">
+                <button class="bg-stack-orange px-8 py-3 md:px-12 md:py-3 lg:px-16 lg:py-4 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active hover:scale-105 transition duration-300 shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] text-lg md:text-xl whitespace-nowrap">
                     Private Online Coaching
                 </button>
             </a>
             <a href="topup.php">
-                <button class="bg-stack-orange px-8 py-3 md:px-12 md:py-3 lg:px-16 lg:py-4 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-md hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] text-lg md:text-xl">
+                <button class="bg-stack-orange px-8 py-3 md:px-12 md:py-3 lg:px-16 lg:py-4 rounded-xl text-white font-semibold font-poppins block active:scale-95 hover:bg-orange-hover active:bg-orange-active shadow-md hover:scale-105 transition duration-300 hover:shadow-[0_0_15px_4px_rgba(255,120,0,0.9)] text-lg md:text-xl whitespace-nowrap">
                     Top Up Diamond
                 </button>
             </a>
@@ -67,7 +67,7 @@
     <section class="max-w-screen">
         <section class="flex items-center px-10 md:px-24 lg:px-32 gap-4 md:gap-6 py-12 md:py-16">
             <h2 class="text-white text-3xl md:text-4xl lg:text-5xl italic whitespace-nowrap">
-                <span class="text-stack-orange">Product</span> Category
+                <span class="text-stack-orange">Kategori</span> Produk
             </h2>
             <div class="flex-grow border-t border-white"></div>
         </section>

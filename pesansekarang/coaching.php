@@ -7,13 +7,11 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Get id_modul from session
 $id_modul = $_SESSION['id_modul'] ?? '';
 if (empty($id_modul)) {
     die("Error: ID Modul tidak ditemukan.");
 }
 
-// Get module details including coaching type and price
 $modul_stmt = $koneksi->prepare("SELECT nama_modul, harga FROM modul WHERE id = ?");
 $modul_stmt->bind_param("i", $id_modul);
 $modul_stmt->execute();
@@ -28,21 +26,18 @@ $nama_modul = $modul_data['nama_modul'];
 $harga = $modul_data['harga'];
 $modul_stmt->close();
 
-// Handle form submission
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Validate coach selection
     if (!isset($_POST['coach'])) {
         die("Error: Silakan pilih coach terlebih dahulu.");
     }
 
-    // Store data in session
     $_SESSION['form_data'] = [
         'nama' => trim($_POST['nama']),
         'email' => trim($_POST['email']),
         'phone' => trim($_POST['phone']),
         'discord' => trim($_POST['discord']),
         'idmlbb' => trim($_POST['idmlbb']),
-        'coach' => trim($_POST['coach']), // Contains "ANCA", "CHANBOYY", or "TURZIEE"
+        'coach' => trim($_POST['coach']),
         'metode_pembayaran' => trim($_POST['metode_pembayaran']),
         'id_modul' => $id_modul,
         'harga' => $harga,

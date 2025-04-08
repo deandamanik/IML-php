@@ -1,27 +1,23 @@
 <?php
 session_start();
 
-// Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../login.php?error=not_logged_in");
     exit();
 }
 
-// Check if there's valid transaction data
 if (!isset($_SESSION['form_data'])) {
     header("Location: ../index.php");
     exit();
 }
 
 $form_data = $_SESSION['form_data'];
-// $user_id = $form_data['user_id'];
 $id_mlbb = $form_data['id_mlbb'];
 $server_id = $form_data['server_id'];
 $nama_modul = $form_data['nama_modul'];
 $harga = number_format($form_data['harga'], 0, ',', '.');
 $payment_method = $form_data['payment'];
 
-// Clear the session data after displaying
 unset($_SESSION['form_data']);
 ?>
 
@@ -39,7 +35,6 @@ unset($_SESSION['form_data']);
 <body class="bg-black text-white min-h-screen flex items-center justify-center p-4">
 
     <div class="w-full max-w-2xl bg-black rounded-xl border border-gray-700 shadow-2xl overflow-hidden">
-        <!-- Success Header with Gradient -->
         <div class="bg-gradient-to-r from-stack-orange to-orange-600 p-6 text-center">
             <div class="flex flex-col items-center">
                 <img src="../img/berhasil/berhasil.png" alt="Success" class="w-32 h-32 md:w-40 md:h-40 animate-bounce">
@@ -48,7 +43,6 @@ unset($_SESSION['form_data']);
             </div>
         </div>
 
-        <!-- Transaction Details -->
         <div class="p-6 md:p-8 space-y-6">
             <div class="space-y-4">
                 <div class="flex justify-between border-b border-gray-700 pb-3">

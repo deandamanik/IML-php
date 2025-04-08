@@ -19,14 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows == 1) {
             $row = $result->fetch_assoc();
-
-            // Cek password tanpa hash
             if ($password === $row['password']) { 
                 $_SESSION['user_id'] = $row['id'];
                 $_SESSION['username'] = $row['username'];
 
-                session_regenerate_id(true); // Regenerate session ID untuk keamanan
-
+                session_regenerate_id(true); 
                 echo "<script>localStorage.removeItem('openLoginModal'); window.location.href = 'mainpage.php';</script>";
                 exit();
             } else {
@@ -130,27 +127,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <!-- Pop Up Login -->
-<div id="loginModal" class="hidden">
-    <div class="flex items-center justify-center fixed inset-0 bg-opacity-30 backdrop-blur-md">
-        <div id="modalContent" class="relative bg-profile text-white rounded-3xl shadow-lg px-8 py-10 w-[90%] max-w-md translate-y-[-50px] opacity-0 transition-all duration-500">
-            <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-200 text-4xl cursor-pointer">&times;</button>
-            <img src="img/dexter1.png" alt="Karakter" class="absolute -top-20 left transform -translate-x-1/2 w-36 md:w-50">
-            <h2 class="text-center text-4xl font-bold italic mt-12">LOGIN</h2>
-            <?php if (!empty($error)): ?>
-                <p class="text-red-500 text-center mt-2 font-semibold"> <?php echo $error; ?> </p>
-            <?php endif; ?>
-            <form action="" method="POST" class="mt-6 space-y-4">
-                <div>
-                    <label class="text-sm font-semibold">USERNAME OR EMAIL</label>
-                    <input type="text" name="username_email" required placeholder="Masukkan Alamat Email" class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg mt-2 focus:ring-2 focus:ring-orange-500">
-                </div>
-                <div>
-                    <label class="text-sm font-semibold">PASSWORD</label>
-                    <input type="password" name="password" required placeholder="Masukkan Password" class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg mt-2 focus:ring-2 focus:ring-orange-500">
-                </div>
-                <button type="submit" class="w-full bg-stack-orange text-white my-4 py-2 rounded-lg font-semibold text-lg shadow-md hover:bg-orange-hover active:bg-orange-active transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
-                    Login
-                </button>
+    <div id="loginModal" class="hidden">
+        <div class="flex items-center justify-center fixed inset-0 bg-opacity-30 backdrop-blur-md">
+            <div id="modalContent" class="relative bg-profile text-white rounded-3xl shadow-lg px-8 py-10 w-[90%] max-w-md translate-y-[-50px] opacity-0 transition-all duration-500">
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-200 text-4xl cursor-pointer">&times;</button>
+                    <img src="img/dexter1.png" alt="Karakter" class="absolute -top-20 left transform -translate-x-1/2 w-36 md:w-50">
+                        <h2 class="text-center text-4xl font-bold italic mt-12">LOGIN</h2>
+                        <?php if (!empty($error)): ?>
+                        <p class="text-red-500 text-center mt-2 font-semibold"> <?php echo $error; ?> </p>
+                        <?php endif; ?>
+                <form action="" method="POST" class="mt-6 space-y-4">
+                    <div>
+                        <label class="text-sm font-semibold">USERNAME OR EMAIL</label>
+                        <input type="text" name="username_email" required placeholder="Masukkan Alamat Email" class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg mt-2 focus:ring-2 focus:ring-orange-500">
+                    </div>
+                    <div>
+                        <label class="text-sm font-semibold">PASSWORD</label>
+                        <input type="password" name="password" required placeholder="Masukkan Password" class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg mt-2 focus:ring-2 focus:ring-orange-500">
+                    </div>
+                    <button type="submit" class="w-full bg-stack-orange text-white my-4 py-2 rounded-lg font-semibold text-lg shadow-md hover:bg-orange-hover active:bg-orange-active transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
+                        Login
+                    </button>
             </form>
             <p class="text-center text-sm mt-4">Belum memiliki akun? <a href="signup.php" class="text-orange-400 font-semibold">Daftar Sekarang</a></p>
         </div>

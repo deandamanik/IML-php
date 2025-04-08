@@ -48,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
         <title>IML</title>
     <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-black">
 
@@ -141,9 +142,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label class="text-sm font-semibold">USERNAME OR EMAIL</label>
                         <input type="text" name="username_email" required placeholder="Masukkan Alamat Email" class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg mt-2 focus:ring-2 focus:ring-orange-500">
                     </div>
-                    <div>
-                        <label class="text-sm font-semibold">PASSWORD</label>
-                        <input type="password" name="password" required placeholder="Masukkan Password" class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg mt-2 focus:ring-2 focus:ring-orange-500">
+                    <div class="relative">
+                        <input type="password" name="password" id="password" required placeholder="Masukkan Password" 
+                            class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg mt-2 focus:ring-0 focus:ring-offset-0 focus:border-orange-500 pr-16">
+                        <button type="button" onclick="togglePassword()" 
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-orange-400 hover:text-orange-300 focus:outline-none focus:ring-0 z-10">
+                            <i class="fa-regular fa-eye absolute transition-all duration-200 right-1 top-[calc(50%-2px)] " id="eyeIcon"></i>
+                            <i class="fa-regular fa-eye-slash absolute transition-all duration-200 opacity-0 right-1 top-[calc(50%-2px)]" id="eyeSlashIcon"></i>
+                        </button>
                     </div>
                     <button type="submit" class="w-full bg-stack-orange text-white my-4 py-2 rounded-lg font-semibold text-lg shadow-md hover:bg-orange-hover active:bg-orange-active transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
                         Login
@@ -156,6 +162,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <script src="js/index.js"></script>
 <script src="js/loading.js"></script>
+<script src="js/password.js"></script>
+<script src="https://kit.fontawesome.com/00ca18dcc6.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

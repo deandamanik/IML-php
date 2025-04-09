@@ -53,8 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="bg-black">
 
    <!-- Header Section -->
-   <header>
-    <div class="py-4 px-6 md:py-5 md:px-20 lg:py-7 lg:px-32 flex justify-between md:gap-20 lg:gap-32">
+   <header class="relative z-50" >
+    <div class="py-4 px-6 z-1 md:py-5 md:px-20 lg:py-7 lg:px-32 flex justify-between md:gap-20 lg:gap-32">
         <div>
             <a href="landingpage.html" class="text-white text-2xl md:text-3xl lg:text-4xl font-extrabold italic">IML</a>
         </div>
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <!-- Hero Section -->
-    <section class="min-h-screen relative">
+    <section class="min-h-screen relative z-10">
         <div class="mt-24 py-12 px-6 md:px-12 lg:px-18 flex justify-end">
             <div>
                 <div class="w-full md:w-[40%] lg:w-[60%]">
@@ -94,14 +94,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div> 
             </div>
         </div>
-        <div class="absolute md:bottom-[-10px] lg:bottom-[-170px] right-0 max-w-[800px] md:max-w-[700px] lg:max-w-[1000px]">
-            <img src="img/index.png" class="w-full object-contain drop-shadow-[0_0_50px_rgba(255,120,0,0.3)]">
+        <div class="absolute md:top-[-170px] lg:top-[-300px] right-0 max-w-[800px] md:max-w-[700px] lg:max-w-[1000px]">
+            <img src="img/claude.png" class="w-full object-contain pointer-events-none"alt="Background Imagerelative">
+            
+        </div>
+        <div class="flex justify-center">
+        <div class="absolute bottom-120 max-w-[800px] md:max-w-[700px] lg:max-w-[1000px]">
+            <img src="img/Ellipse.png" class=" object-contain pointer-events-none"alt="Background Imagerelative">
+        </div>
         </div>
     </section>
 
 
         <!-- Kenapa kami Section -->
-        <section class="px-12 py-28 mt-24 flex flex-col items-center justify-center min-h-screen">
+        <section class="px-12  mt-24 flex flex-col items-center justify-center min-h-screen">
             <img src="img/landingpage/1.png" alt="">
             <div class="w-xl px-6 md:px-36 mt-16">
                 <a href="#" id="openModal">
@@ -129,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- Pop Up Login -->
     <div id="loginModal" class="hidden">
-        <div class="flex items-center justify-center fixed inset-0 bg-opacity-30 backdrop-blur-md">
+        <div class=" z-50 flex items-center justify-center fixed inset-0 bg-opacity-30 backdrop-blur-md">
             <div id="modalContent" class="relative bg-profile text-white rounded-3xl shadow-lg px-8 py-10 w-[90%] max-w-md translate-y-[-50px] opacity-0 transition-all duration-500">
                 <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-200 text-4xl cursor-pointer">&times;</button>
                     <img src="img/dexter1.png" alt="Karakter" class="absolute -top-20 left transform -translate-x-1/2 w-36 md:w-50">

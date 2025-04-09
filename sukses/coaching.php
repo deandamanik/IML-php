@@ -84,7 +84,7 @@ $koneksi->close();
             <p class="text-center text-sm text-gray-400 italic mb-4">*Cek detail coaching Anda di menu Profile</p>
             <a href="../profile.php">
             <button class="w-full py-3 bg-stack-orange rounded-xl text-white font-semibold block active:scale-98 hover:bg-orange-hover     active:bg-orange-active shadow-xl transition duration-300 hover:shadow-[0_0_20px_5px_rgba(255,120,0,0.9)] cursor-pointer">
-                        Kembali ke Beranda
+                        Kembali
                 </button>
             </a>
         </div>

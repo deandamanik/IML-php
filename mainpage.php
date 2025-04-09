@@ -69,14 +69,14 @@ $username = $_SESSION['username'];
                 </div> 
             </div>
         </div>
-        <div class="absolute md:bottom-40 lg:bottom-20 right-0 max-w-[800px] md:max-w-[700px] lg:max-w-[1050px]">
-            <img src="img/beranda.png" class="w-full object-contain drop-shadow-[0_0_50px_rgba(255,120,0,0.3)]">
+        <div class="absolute md:bottom-30 lg:bottom-10 right-0 max-w-[800px] md:max-w-[700px] lg:max-w-[1050px]">
+            <img src="img/bened.png" class="w-full object-contain relative">
         </div>
     </section>
 
 
     <!-- Program Pilihan Section -->
-    <section class="px-12 py-24 flex flex-col items-center justify-center">
+    <section class="px-12  flex flex-col items-center justify-center">
         <h2 class="text-white text-6xl font-bold">Program Pilihan Kami</h2>
 
         <div class="flex gap-10 py-16">

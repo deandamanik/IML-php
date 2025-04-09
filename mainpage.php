@@ -48,8 +48,8 @@ $username = $_SESSION['username'];
     <!-- Hero Section -->
     <section class="min-h-screen relative">
         <div class="mt-24 py-12 px-6 md:px-12 lg:px-18 flex justify-end">
-            <div>
-                <div class="w-full md:w-[50%] lg:w-[50%]">
+            <div class="relative z-50">
+                <div class="w-full md:w-[40%] lg:w-[60%]">
                     <h1 class="text-white font-extrabold text-5xl md:text-6xl lg:text-7xl mb-6 md:mb-8 lg:mb-10 font-hero">
                         Welcome 
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-orange-500"><?php echo htmlspecialchars($username); ?></span>
@@ -70,7 +70,7 @@ $username = $_SESSION['username'];
             </div>
         </div>
         <div class="absolute md:bottom-30 lg:bottom-10 right-0 max-w-[800px] md:max-w-[700px] lg:max-w-[1050px]">
-            <img src="img/bened.png" class="w-full object-contain relative">
+            <img src="img/bened.png" class="w-full object-contain relative z-10">
         </div>
     </section>
 

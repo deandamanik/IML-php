@@ -294,20 +294,23 @@
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
+  .top-2 {
+    top: calc(var(--spacing) * 2);
+  }
   .top-3 {
     top: calc(var(--spacing) * 3);
   }
   .top-4 {
     top: calc(var(--spacing) * 4);
   }
-  .top-6 {
-    top: calc(var(--spacing) * 6);
-  }
-  .top-\[100px\] {
-    top: 100px;
+  .top-\[calc\(50\%\)\] {
+    top: calc(50%);
   }
   .top-\[calc\(50\%-2px\)\] {
     top: calc(50% - 2px);
+  }
+  .top-\[calc\(50\)\] {
+    top: calc(50);
   }
   .right-0 {
     right: calc(var(--spacing) * 0);
@@ -315,56 +318,23 @@
   .right-1 {
     right: calc(var(--spacing) * 1);
   }
-  .right-2 {
-    right: calc(var(--spacing) * 2);
-  }
   .right-3 {
     right: calc(var(--spacing) * 3);
   }
   .right-4 {
     right: calc(var(--spacing) * 4);
   }
-  .right-5 {
-    right: calc(var(--spacing) * 5);
+  .right-8 {
+    right: calc(var(--spacing) * 8);
   }
-  .right-6 {
-    right: calc(var(--spacing) * 6);
+  .right-10 {
+    right: calc(var(--spacing) * 10);
+  }
+  .right-12 {
+    right: calc(var(--spacing) * 12);
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
-  }
-  .bottom-1 {
-    bottom: calc(var(--spacing) * 1);
-  }
-  .bottom-2 {
-    bottom: calc(var(--spacing) * 2);
-  }
-  .bottom-12 {
-    bottom: calc(var(--spacing) * 12);
-  }
-  .bottom-200 {
-    bottom: calc(var(--spacing) * 200);
-  }
-  .bottom-\[0\.5px\] {
-    bottom: 0.5px;
-  }
-  .bottom-\[1px\] {
-    bottom: 1px;
-  }
-  .bottom-\[3px\] {
-    bottom: 3px;
-  }
-  .bottom-\[5px\] {
-    bottom: 5px;
-  }
-  .bottom-\[10px\] {
-    bottom: 10px;
-  }
-  .bottom-\[100px\] {
-    bottom: 100px;
-  }
-  .bottom-\[px\] {
-    bottom: px;
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
@@ -530,9 +500,6 @@
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
-  }
-  .mb-3 {
-    margin-bottom: calc(var(--spacing) * 3);
   }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
@@ -1795,9 +1762,6 @@
   }
   .pt-28 {
     padding-top: calc(var(--spacing) * 28);
-  }
-  .pr-10 {
-    padding-right: calc(var(--spacing) * 10);
   }
   .pr-16 {
     padding-right: calc(var(--spacing) * 16);

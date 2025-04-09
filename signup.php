@@ -85,7 +85,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div>
                     <label class="block text-sm font-semibold mb-2">PASSWORD</label>
-                    <input type="password" name="password" placeholder="Masukkan Password" class="w-full px-4 py-2 bg-profile-modul rounded-xl text-white text-sm" required>
+                    <input type="password" name="password" id="password" placeholder="Masukkan Password" class="w-full px-4 py-2 bg-profile-modul rounded-xl text-white text-sm" required>
+                    <button type="button" onclick="togglePassword()" 
+                    class="absolute right-10 transform -translate-y-1/2 text-orange-400 hover:text-orange-300 focus:outline-none focus:ring-0 z-10">
+                    <i class="fa-regular fa-eye absolute transition-all duration-200 right-1 top-2 " id="eyeIcon"></i>
+                    <i class="fa-regular fa-eye-slash absolute transition-all duration-200 opacity-0 right-1 top-2" id="eyeSlashIcon"></i>
                 </div>
     
                 <p class="text-sm mt-4 italic">
@@ -102,6 +106,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
 <script src="js/loginredirect.js"></script>
+<script src="js/password.js"></script>
+<script src="https://kit.fontawesome.com/00ca18dcc6.js" crossorigin="anonymous"></script>
 
 
 </body>
